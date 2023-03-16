@@ -5,6 +5,8 @@ import BookScreen from "./screens/BookScreen";
 import Tabs from "./navigation/tabs";
 import PdfScreen from './screens/PdfScreen';
 import GenreScreen from './screens/GenreScreen';
+import LinksScreen from './screens/LinksScreen';
+import WebViewScreen from './screens/WebViewScreen';
 
 const theme = {
     ...DefaultTheme,
@@ -30,8 +32,10 @@ const App = () => {
 
                 {/* Screens */}
                 <Stack.Screen name="BookScreen" component={BookScreen} options={{ headerShown: false }} />
+                <Stack.Screen name="LinksScreen" component={LinksScreen}/>
                 <Stack.Screen name="PdfScreen" component={PdfScreen} />
                 <Stack.Screen name="GenreScreen" component={GenreScreen} />
+                <Stack.Screen name="WebViewScreen" component={WebViewScreen}/>
             </Stack.Navigator>
         </NavigationContainer>
     )
