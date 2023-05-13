@@ -161,7 +161,7 @@ const BookScreen = ({ route, navigation }) => {
         >
           <Text style={{ ...FONTS.h2, color: COLORS.white }}>{book.name}</Text>
           <Text style={{ ...FONTS.body3, color: COLORS.white }}>
-            {book.author.name}
+            {book.author}
           </Text>
         </View>
 

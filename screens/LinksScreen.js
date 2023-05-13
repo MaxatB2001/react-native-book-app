@@ -1,4 +1,4 @@
-import {View, FlatList} from "react-native"
+import {View, FlatList, Text} from "react-native"
 import LInkItem from "../components/LInkItem";
 import { COLORS } from "../constants";
 
@@ -51,6 +51,9 @@ const LinksScreen = ({ navigation, route }) => {
         data={links}
         renderItem={({ item }) => <LInkItem item={item} navigation={navigation} />}
         keyExtractor={(item) => item.path}
+        ListFooterComponent={<View>
+          
+        </View>}
       />
     </View>
   );

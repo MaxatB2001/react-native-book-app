@@ -14,6 +14,8 @@ export const read_icon = require('../assets/icons/read_icon.png');
 export const back_arrow_icon = require('../assets/icons/back_arrow_icon.png');
 export const more_icon = require('../assets/icons/more_icon.png');
 export const library_icon =  require('../assets/icons/library.png');
+export const comments = require("../assets/icons/9cb9ed4f35cf7c2f295cc2bc6f732a84.png")
+export const knitu_icon = require("../assets/icons/kazanskij_natsionalnyj_issledovatelskij_tehnologicheskij_universitet.png")
 export default {
   card_icon,
   claim_icon,
@@ -30,5 +32,7 @@ export default {
   read_icon,
   back_arrow_icon,
   more_icon,
-  library_icon
+  library_icon,
+  knitu_icon,
+  comments
 };

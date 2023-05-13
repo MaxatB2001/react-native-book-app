@@ -16,10 +16,10 @@ const Tabs = () => {
         tabBarShowLabel: false,
         tabBarStyle: {
           height: "9%",
-          backgroundColor: COLORS.black,
+          backgroundColor: "#2B6CC4",
         },
         tabBarIcon: ({ focused }) => {
-          const tintColor = focused ? COLORS.white : COLORS.gray;
+          const tintColor = focused ? "#32221A" : "#F5F5DC";
 
           switch (route.name) {
             case "Home":
