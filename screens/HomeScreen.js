@@ -14,6 +14,7 @@ const HomeScreen = ({ navigation }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [news, setNews] = useState([]);
   const [showSidebar, setShowSidebar] = useState(false)
+  const [showLit, setShowLit] = useState(false)
   console.log(news);
   useEffect(() => {
     getNews(currentPage).then(data => setNews((prev) => [...prev, ...data]))
@@ -60,12 +61,48 @@ const HomeScreen = ({ navigation }) => {
               <Pressable onPress={() => navigation.navigate("WebViewScreen", {pageUrl: "http://www.kstu.ru/article.jsp?id=1821&id_e=34712"})}  style={{color: "white", width: "100%", backgroundColor: "#270A1F", display: "flex", justifyContent: "center", alignItems: "center"}}>
               <Text style={{color: "white", padding: 10, fontWeight: "bold"}}>Полнотекстовая периодика</Text>
               </Pressable>
-              <Pressable  style={{color: "white", width: "100%", backgroundColor: "#270A1F", display: "flex", justifyContent: "center", alignItems: "center"}}>
-              <Text style={{color: "white", padding: 10, fontWeight: "bold"}}>Настройки</Text>
-              </Pressable>
               <Pressable onPress={() => navigation.navigate("LinksScreen")}  style={{color: "white", width: "100%", backgroundColor: "#270A1F", display: "flex", justifyContent: "center", alignItems: "center"}}>
               <Text style={{color: "white", padding: 10, fontWeight: "bold"}}>О нас</Text>
               </Pressable>
+              <Pressable onPress={() => setShowLit(!showLit)}  style={{color: "white", width: "100%", backgroundColor: "#270A1F", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "row"}}>
+              <Text style={{color: "white", padding: 10, fontWeight: "bold"}}>Литература</Text>
+              <Image
+                  source={icons.down_arrow}
+                  resizeMode="contain"
+                  style={showLit ? {
+                    tintColor: COLORS.white,
+                    width: 15,
+                    height: 15,
+                    marginLeft: 10,
+                    transform: [{rotate: "180deg"}]
+                  } : 
+                  {
+                    tintColor: COLORS.white,
+                    width: 15,
+                    height: 15,
+                    marginLeft: 10,
+                  }
+                }
+                /> 
+              </Pressable>
+              {showLit && 
+              <View>
+                <Pressable onPress={() => navigation.navigate("LitScreen", {type: "Монографии"})}  style={{color: "white", width: "100%", backgroundColor: "#270A1F", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <Text style={{color: "white", padding: 10, fontWeight: "bold"}}>Монографии</Text>
+                </Pressable>   
+                <Pressable onPress={() => navigation.navigate("LitScreen", {type: "Читаем в оригинале"})}  style={{color: "white", width: "100%", backgroundColor: "#270A1F", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <Text style={{color: "white", padding: 10, fontWeight: "bold"}}>Читаем в оригинале</Text>
+                </Pressable> 
+                <Pressable onPress={() => navigation.navigate("LitScreen", {type: "Памятники литературы"})}  style={{color: "white", width: "100%", backgroundColor: "#270A1F", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <Text style={{color: "white", padding: 10, fontWeight: "bold"}}>Памятники литературы</Text>
+                </Pressable> 
+                <Pressable onPress={() => navigation.navigate("LitScreen", {type: "Открытая наука"})}  style={{color: "white", width: "100%", backgroundColor: "#270A1F", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <Text style={{color: "white", padding: 10, fontWeight: "bold"}}>Открытая наука</Text>
+                <Pressable onPress={() => navigation.navigate("LitScreen", {type: "Антология мысли"})}  style={{color: "white", width: "100%", backgroundColor: "#270A1F", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <Text style={{color: "white", padding: 10, fontWeight: "bold"}}>Антология мысли</Text>
+                </Pressable> 
+                </Pressable> 
+              </View>}
               </View>
               <Pressable onPress={() => navigation.navigate("FeedbackScreen")}  style={{color: "white", width: "100%",  backgroundColor: "#412227", display: "flex", justifyContent: "center", alignItems: "center"}}>
               <Text style={{color: "white", padding: 10, fontWeight: "bold"}}>Обратная связь</Text>

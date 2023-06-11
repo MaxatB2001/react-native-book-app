@@ -16,6 +16,7 @@ import FeedbacScreen from './screens/FeedbackScreen';
 
 
 import {useState, createContext} from "react"
+import LitScreen from './screens/LitScreen';
 
 export let UserContext;
 
@@ -61,6 +62,7 @@ const App = () => {
                 <Stack.Screen name='LoginScreen' component={LoginScreen}/>
                 <Stack.Screen name="NewsScreen" component={NewsPageScreen}/>
                 <Stack.Screen name="FeedbackScreen" component={FeedbacScreen}/>
+                <Stack.Screen name="LitScreen" component={LitScreen}/>
             </Stack.Navigator>
         </NavigationContainer>    
         </UserContext.Provider>

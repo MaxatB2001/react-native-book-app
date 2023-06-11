@@ -1,6 +1,6 @@
-import { View, Text, Image, TextInput, Button } from "react-native"
+import { View, Text, Image, TextInput, Button, ImageBackground } from "react-native"
 import { useContext, useState } from "react"
-import { icons } from "../constants"
+import { icons, images } from "../constants"
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable"
 import { BASE_API_URL } from "../constants/constants"
 import { UserContext } from "../App"
@@ -24,18 +24,9 @@ const LoginScreen = ({ navigation, route }) => {
     
     }
     return(
-        <View style={{backgroundColor: "#412227", flex: 1, display: "flex", alignItems: "center", justifyContent: "center"}}>
-            <Text style={{color: "#4169E1", fontSize: 40, fontWeight: "bold", marginBottom: 30}}>УНИЦ КНИТУ</Text>
+        <View style={{flex: 1}}>
+            <ImageBackground resizeMode="cover" style={{flex: 1, display: "flex", alignItems: "center", justifyContent: "center"}} source={images.knitu_bg}>
             <View style={{width: "100%", display: "flex", alignItems: "center", justifyContent: "center"}}>
-            <Image
-                  source={icons.knitu_icon}
-                  resizeMode="contain"
-                  style={{
-                    width: 250,
-                    height: 250,
-                    marginBottom: 60
-                  }}
-                /> 
                 <View style={{width: "80%"}}>
                 <TextInput value={email} onChangeText={(value) => setEmail(value)} style={{backgroundColor: "#270A1F", color: "white", borderRadius: 10, width: "100%", marginBottom: 10, padding: 15}} placeholderTextColor={"white"} placeholder="Логин"/>
                 <TextInput value={password} onChangeText={(value) => setPassword(value)} style={{backgroundColor: "#270A1F", color: "white", borderRadius: 10, width: "100%",marginBottom: 20, padding: 15
@@ -46,6 +37,7 @@ const LoginScreen = ({ navigation, route }) => {
         </Pressable>
                 </View>
             </View>
+            </ImageBackground>
         </View>
     )
 }
